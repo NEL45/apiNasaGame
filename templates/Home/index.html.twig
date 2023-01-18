@@ -1,0 +1,77 @@
+{% extends 'layout.html.twig' %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/homestyle.css">
+{% endblock %}
+{% block content %}
+	<h1>MWFC</h1>
+	<h2>Mars Weapons Fight Club</h2>
+
+	<div class="container menu">
+		<div class="product">
+			<a href="{{ path('game') }}" class="link">
+				<div class="effect-1"></div>
+				<div class="effect-2"></div>
+				<div class="content">
+					<div class="exercise"></div>
+				</div>
+				<span class="title">
+					Kombat
+					<span class="subtitle">Finish Him</span>
+				</span>
+			</a>
+		</div>
+		<div class="product">
+			<a href="{{ path('weapons') }}" class="link">
+				<div class="effect-1"></div>
+				<div class="effect-2"></div>
+				<div class="content">
+					<div class="sleep"></div>
+				</div>
+				<span class="title">
+					Armes
+					<span class="subtitle">Notre Arsenal</span>
+				</span>
+			</a>
+		</div>
+		<div class="product">
+			<a href="{{ path('fighters') }}" class="link">
+				<div class="effect-1"></div>
+				<div class="effect-2"></div>
+				<div class="content">
+					<div class="meditation"></div>
+				</div>
+				<span class="title">
+					Combattants
+					<span class="subtitle">Qui sommes-nous?</span>
+				</span>
+			</a>
+		</div>
+		<div class="product">
+			<a href="{{ path('environnement') }}" class="link">
+				<div class="effect-1"></div>
+				<div class="effect-2"></div>
+				<div class="content">
+					<div class="exercise"></div>
+				</div>
+				<span class="title">
+					Lieux
+					<span class="subtitle">Les arènes</span>
+				</span>
+			</a>
+		</div>
+	</div>
+	<div class="style425">
+		<div class="fighters-button">
+			<a href="{{ path('game') }}" class="fighters-return">Kombat</a>
+		</div>
+		<div class="fighters-button">
+			<a href="{{ path('weapons') }}" class="fighters-return">Armes</a>
+		</div>
+		<div class="fighters-button">
+			<a href="{{ path('fighters') }}" class="fighters-return">Combattants</a>
+		</div>
+		<div class="fighters-button">
+			<a href="{{ path('environnement') }}" class="fighters-return">Lieux</a>
+		</div>
+	</div>
+{% endblock %}

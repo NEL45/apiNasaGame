@@ -1,0 +1,63 @@
+{% extends 'layout.html.twig' %}
+{% block title %}
+	{{ parent() }}
+	- Kombat
+{% endblock %}
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/gameHome.css">
+{% endblock %}
+
+{% block content %}
+
+	<header>
+		<h1>Kombat !</h1>
+	</header>
+	<p>
+		<button class="choose btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+			Cliquez pour choisir votre combattant !
+		</button>
+	</p>
+	<div class="collapse" id="collapseExample">
+		<section class="section-home">
+			{% for robot in robots %}
+				{% if robot.name == '' %}
+					<div class="card-vs">
+						<p class="card-text ">VS</p>
+					</div>
+				{% else %}
+					<div class="card-robot">
+						<div class="card" style="width: 20rem;">
+							<img class="card-img-top" src="/{{ robot.img }}" alt="Photo de Percy">
+							<div class="card-body">
+								<h5 class="card-title text-center">{{ robot.name }}</h5>
+								<p class="card-text">Armes</p>
+								<ul class="attack">
+									{% for attack in  robot.attacks %}
+										<li>{{ attack }}</li>
+									{% endfor %}
+								</ul>
+								{# {% for UserWinOrNots in UserWinOrNot %}
+									<tr>
+										<td>
+											<a href="{{ path('gamegames', {'id': UserWinOrNots}) }}" class="btn btn-success btn-user btn-block">Profil</a>
+										</td>
+										<td>{{ UserWinOrNots }}</td>
+									</tr>
+		
+								{% endfor %} #}
+								{# {% for map in  maps %}
+																												<li>{{ map }}
+																													Jouer avec
+																													{{ robot.name }}</li>
+																											{% endfor %} #}
+								{# <a href="{{ path('gamegames') }}" "{{ robot.name }}" class="play btn">Jouer avec
+																																												{{ robot.name }}</a> #}
+							</td>
+						</tr>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	{% endfor %}
+</section></div><div class="fighters-button">
+<a href="{{ path('accueil') }}" class="fighters-return">← Retour à l'accueil</a></div>{% endblock %}
