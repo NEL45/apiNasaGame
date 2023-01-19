@@ -1,0 +1,8 @@
+{
+  "name": "apiNasaGame",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:NEL45/apiNasaGame.git",
+  "author": "NEL45 <n2weickert@gmail.com>",
+  "license": "MIT"
+}

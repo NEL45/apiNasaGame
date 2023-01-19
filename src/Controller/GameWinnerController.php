@@ -26,7 +26,18 @@ class GameWinnerController extends AbstractController
      */    
     public function readyToGo(): Response
     {
+        $robotPercy = [
+            'name' => 'Percy', 'attacks' => ['Coup de caméra', 'Rouler', 'Lanceur de filet'],
+            'img' => 'assets/images/game/Percyx600.jpg'
+        ];
+        $robotGinny = [
+            'name' => 'Ginny', 'attacks' => ['Coup d\'hélice', 'Charge', 'Réfléxion solaire'],
+            'img' => 'assets/images/game/Ginnyx600.jpg'
+        ];
+        $cardEmpty = ['name' => ''];
+        $robots = [$robotPercy, $cardEmpty, $robotGinny];
 
+        $robotSelected = [$robotPercy, $robotGinny];
         $robotPercy = [
             'name' => 'Percy', 'attacks' => ['Coup de caméra', 'Rouler', 'Lanceur de filet'],
             'img' => 'assets/images/game/Percyx600.jpg'
@@ -89,11 +100,11 @@ class GameWinnerController extends AbstractController
             $robotLose = $ginny;
         }
 
-        // if ($robotSelected === $robotWin['name']) {
-        //     $userWinOrNot = 'Vous avez gagné !';
-        // } else {
-        //     $userWinOrNot = 'Vous avez misé sur la mauvaise conserve. Essayez encore !';
-        // }
+        if ($robotSelected === $robotWin['name']) {
+            $userWinOrNot = 'Vous avez gagné !';
+        } else {
+            $userWinOrNot = 'Vous avez misé sur la mauvaise conserve. Essayez encore !';
+        }
 
         $key = 'Uhb88PepnBJsmemDorgenrrjO1qUIovFepIVw5bR';
         $client = HttpClient::create();
@@ -114,8 +125,10 @@ class GameWinnerController extends AbstractController
         return $this->render('Game/gameWinner.html.twig', [
             'robotWin' => $robotWin,
             'robotLose' => $robotLose,
-            // 'UserWinOrNot' => $userWinOrNot,
-            'maps' => $map
+            'UserWinOrNot' => $userWinOrNot,
+            'maps' => $map,
+            'robot' => $robots,
+            'robotSelecteds' => $robotSelected,
         ]);
     }
 }

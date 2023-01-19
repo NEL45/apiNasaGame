@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+{% extends 'base.html.twig' %}
 {% block title %}
 	{{ parent() }}
 	- Kombat
@@ -36,22 +36,8 @@
 										<li>{{ attack }}</li>
 									{% endfor %}
 								</ul>
-								{# {% for UserWinOrNots in UserWinOrNot %}
-									<tr>
-										<td>
-											<a href="{{ path('gamegames', {'id': UserWinOrNots}) }}" class="btn btn-success btn-user btn-block">Profil</a>
-										</td>
-										<td>{{ UserWinOrNots }}</td>
-									</tr>
-		
-								{% endfor %} #}
-								{# {% for map in  maps %}
-																												<li>{{ map }}
-																													Jouer avec
-																													{{ robot.name }}</li>
-																											{% endfor %} #}
-								{# <a href="{{ path('gamegames') }}" "{{ robot.name }}" class="play btn">Jouer avec
-																																												{{ robot.name }}</a> #}
+								<a href="{{ path('gameWinner') }}" "{{ robot.name }}" class="play btn">Jouer avec
+									{{ robot.name }}</a>
 							</td>
 						</tr>
 					</div>
