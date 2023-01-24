@@ -26,17 +26,18 @@
 					</div>
 				{% else %}
 					<div class="card-robot">
-						<div class="card" style="width: 20rem;">
-							<img class="card-img-top" src="/{{ robot.img }}" alt="Photo de Percy">
+						<div
+							class="card" style="width: 20rem;">
+							<img class="card-img-top" src="{{ asset(robot.img) }}" alt="Photo de Percy">
 							<div class="card-body">
 								<h5 class="card-title text-center">{{ robot.name }}</h5>
 								<p class="card-text">Armes</p>
 								<ul class="attack">
-									{% for attack in  robot.attacks %}
+									{% for attack in robot.attacks %}
 										<li>{{ attack }}</li>
 									{% endfor %}
 								</ul>
-								<a href="{{ path('gameWinner') }}" "{{ robot.name }}" class="play btn">Jouer avec
+								<a href="{{ path('game_winner', {robotSelected:robot.name}) }}" {{ robot.name }} class="play btn">Jouer avec
 									{{ robot.name }}</a>
 							</td>
 						</tr>

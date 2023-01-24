@@ -1,27 +1,21 @@
-{% extends 'layout.html.twig' %}
+{% extends 'base.html.twig' %}
 {% block title %}
 	{{ parent() }}
 	- Kombat
 {% endblock %}
 {% block stylesheet %}
-	<link rel="stylesheet" href="/assets/css/gameHome.css">
+	<link rel="stylesheet" href="/assets/styles/gameHome.css">
 {% endblock %}
 {% block content %}
-	{# {{ dump( maps )}} #}
 	<div class="body-background" style="background-image: url({{ maps.img_src }}); width:auto; height:100%">
 		<header class="octogon">
 			<h1>Kombat</h1>
 		</header>
-		<p class="finish">
-			FINISH HIM !!!</p>
-
 		<section class="result">
-			<h3 class="message">{{ UserWinOrNot }}</h3>
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						{{ dump( robotWin.img )}}
-						<img src="asset{{ robotWin.img }}" class="rounded float-start" alt="Image de l'attaque" style="width:110%; height:110%">
+						<img src="{{ asset(robotWin.img) }}" class="rounded float-start" alt="Image de l'attaque Win" style="width:100%; height:100%">
 						<div class="">
 							<strong>{{ robotWin.name }}</strong>
 						</div>
@@ -29,24 +23,18 @@
 					<div class="col">
 						<div class="card-vs">
 							<p class="card-text ">VS</p>
-							{{ dump( robotSelecteds.0.img )}}
-
-							<img src="{{ robotSelecteds.0.img }}" class="rounded float-center" alt="Image de l'arène" style="width:100%; height:100%">
 						</div>
 					</div>
 					<div class="col">
-						<img src="/{{ robotLose.img }}" class="rounded float-end" alt="Image de l'attaque" style="width:110%; height:110%">
+						<img src="{{ asset(robotLose.img) }}" class="rounded float-end" alt="Image de l'attaque Lose" style="width:100%; height:100%">
 						<div class="">
 							<strong>{{ robotLose.name }}</strong>
 						</div>
 					</div>
 				</div>
 			</div>
-
 			<br><br><br>
-
-			<h3 class="message">{{ UserWinOrNot }}</h3>
-
+			<h3 class="message">{{ userWinOrNot }}</h3>
 			<p class="win">
 				<strong>{{ robotWin.name }}</strong>
 				a gagné grâce à son attaque
@@ -59,7 +47,7 @@
 			<p class="win-citation">{{ robotWin.citation }}</p>
 			<p class="finish">FINISH HIM !!!</p>
 			<div class="fighters-button">
-				<a href="{{ path('accueil') }}" class="fighters-return">← Retour dans l'arène</a>
+				<a href="{{ path('game') }}" class="fighters-return">← Retour dans l'arène</a>
 			</div>
 		</section>
 		|</div>
