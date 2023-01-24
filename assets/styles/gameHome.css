@@ -1,7 +1,7 @@
 body {
     text-align: center;
     background-color: #fcf9f6;
-    background-image: url("/assets/images/game/percy-ginnyAttack.jpg");
+    /* background-image: url("/assets/images/game/percy-ginnyAttack.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
 }
